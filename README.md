@@ -4,15 +4,29 @@
 ## 编译环境
 1. 宿主机操作系统：建议Ubuntu 16.04及以上版本 <br>
 2. 交叉编译器：arm-linux-gnueabihf-cc，<br>
-   交叉编译器版本：5.6(Sourcery CodeBench Lite 2015.05-17)；<br>
-3. dtc<br>
+   交叉编译器版本：6.5.0 (Linaro GCC 6.5-2018.12) ；<br>
+3. 设备树编译器版本：DTC 1.4.0<br>
 
 ## 操作步骤
 1. source ~/Xilinx-2015.4/SDK/2015.4/settings64.sh
 2. export ARCH=arm
 3. export CROSS_COMPILE=arm-linux-gnueabihf-
-4. make  zynq_jLab_defconfig
+4. make   zynq_jLab_defconfig
 5. make
+
+## 引导内核
+### 基本命令行参数设置<br>
+* setenv bootargs=console=ttyPS0,115200 earlyprintk root=/dev/mmcblk0p2 rw * rootwait uio_pdrv_genirq.of_id=generic-uio
+* setenv ipaddr=192.168.15.11
+* setenv serverip=192.168.15.10
+* setenv netmask=255.255.255.0
+* setenv bootdelay=4
+### 从SD卡启动
+
+* uenvcmd=load mmc 0 0x2000000 uImage;load mmc 0 0x1f00000 zynq-zc702.dtb;bootm 0x2000000 - 0x1f00000
+
+### 从TFTP服务器启动 
+* uenvcmd=tftpboot 0x2000000 uImage;tftpboot 0x1f00000 zynq-zc702.dtb;bootm 0x2000000 - 0x1f00000
 
 ## 运行环境
 jLab实验平台 1.0<br>
