@@ -17,10 +17,10 @@
 ## 引导内核
 ### 基本命令行参数设置<br>
 * setenv bootargs=console=ttyPS0,115200 earlyprintk root=/dev/mmcblk0p2 rw * rootwait uio_pdrv_genirq.of_id=generic-uio
-* setenv ipaddr=192.168.15.11
-* setenv serverip=192.168.15.10
-* setenv netmask=255.255.255.0
-* setenv bootdelay=4
+* setenv ipaddr=0.0.0.0     #设置自身IP地址
+* setenv serverip=0.0.0.0   #设置服务器IP地址
+* setenv netmask=0.0.0.0    #设置mask
+* setenv bootdelay=4        #启动延时
 ### 从SD卡启动
 
 * uenvcmd=load mmc 0 0x2000000 uImage;load mmc 0 0x1f00000 zynq-zc702.dtb;bootm 0x2000000 - 0x1f00000
