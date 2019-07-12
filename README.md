@@ -8,7 +8,7 @@
 3. 设备树编译器版本：DTC 1.4.0<br>
 
 ## 操作步骤
-1. source ~/Xilinx-2015.4/SDK/2015.4/settings64.sh
+1. 配置交叉编译器环境变量
 2. export ARCH=arm
 3. export CROSS_COMPILE=arm-linux-gnueabihf-
 4. make   zynq_jLab_defconfig
