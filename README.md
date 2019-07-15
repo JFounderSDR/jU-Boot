@@ -3,7 +3,7 @@
 
 ## 编译环境
 1. 宿主机操作系统：建议Ubuntu 16.04及以上版本 <br>
-2. 交叉编译器：arm-linux-gnueabihf-cc，<br>
+2. 交叉编译器：arm-linux-gnueabihf-gcc，<br>
    交叉编译器版本：6.5.0 (Linaro GCC 6.5-2018.12) ；<br>
 3. 设备树编译器版本：DTC 1.4.0<br>
 
