@@ -7,26 +7,26 @@
    交叉编译器版本：6.5.0 (Linaro GCC 6.5-2018.12) ；<br>
 
 ## 编译步骤
-1. export 交叉编译器路径
-2. export ARCH=arm
-3. export CROSS_COMPILE=arm-linux-gnueabihf-
-4. make   zynq_jLab_defconfig
-5. make
+1export PATH="/home/armtool/gcc-linaro-6.5.0-2018.12-i686_arm-linux-gnueabihf/bin:$PATH"  #注意修改成当前系统编译器所在路径 <br>
+2. export ARCH=arm<br>
+3. export CROSS_COMPILE=arm-linux-gnueabihf-<br>
+4. make   zynq_jLab_defconfig<br>
+5. make<br>
 
 ## 引导内核
 ### 基本命令行参数设置<br>
-* setenv bootargs=console=ttyPS0,115200 earlyprintk root=/dev/mmcblk0p2 rw * rootwait uio_pdrv_genirq.of_id=generic-uio  #SD卡启动根文件系统
-* bootargs=console=ttyPS0,115200 earlyprintk root=/dev/nfs nfsroot=192.168.15.10:/home/ubuntu_core_rootfs,tcp nolock ip=192.168.15.11:192.168.15.10:192.168.15.1:255.255.255.0:jf315:eth0:off rw uio_pdrv_genirq.of_id=generic-uio#TFTP服务器启动根文件系统
-* setenv ipaddr=0.0.0.0     #设置自身IP地址
-* setenv serverip=0.0.0.0   #设置服务器IP地址
-* setenv netmask=0.0.0.0    #设置mask
-* setenv bootdelay=4        #启动延时
+* setenv bootargs=console=ttyPS0,115200 earlyprintk root=/dev/mmcblk0p2 rw * rootwait uio_pdrv_genirq.of_id=generic-uio  #SD卡启动根文件系统<br>
+* bootargs=console=ttyPS0,115200 earlyprintk root=/dev/nfs nfsroot=192.168.15.10:/home/ubuntu_core_rootfs,tcp nolock ip=192.168.15.11:192.168.15.10:192.168.15.1:255.255.255.0:jf315:eth0:off rw uio_pdrv_genirq.of_id=generic-uio#TFTP服务器启动根文件系统<br>
+* setenv ipaddr=0.0.0.0     #设置自身IP地址<br>
+* setenv serverip=0.0.0.0   #设置服务器IP地址<br>
+* setenv netmask=0.0.0.0    #设置mask<br>
+* setenv bootdelay=4        #启动延时<br>
 ### 从SD卡启动
 
-* uenvcmd=load mmc 0 0x2000000 uImage;load mmc 0 0x1f00000 zynq-zc702.dtb;bootm 0x2000000 - 0x1f00000
+* uenvcmd=load mmc 0 0x2000000 uImage;load mmc 0 0x1f00000 zynq-zc702.dtb;bootm 0x2000000 - 0x1f00000<br>
 
 ### 从TFTP服务器启动 
-* uenvcmd=tftpboot 0x2000000 uImage;tftpboot 0x1f00000 zynq-zc702.dtb;bootm 0x2000000 - 0x1f00000 
+* uenvcmd=tftpboot 0x2000000 uImage;tftpboot 0x1f00000 zynq-zc702.dtb;bootm 0x2000000 - 0x1f00000 <br>
 
 ### FIT格式镜像启动
 * FIT格式镜像直接放到TFTP目录或者SD卡即可启动，制作方式参考[FIT文件制作](https://123456.com) <br>
