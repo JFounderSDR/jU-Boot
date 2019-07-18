@@ -26,7 +26,7 @@
 * uenvcmd=load mmc 0 0x2000000 uImage;load mmc 0 0x1f00000 zynq-zc702.dtb;bootm 0x2000000 - 0x1f00000
 
 ### 从TFTP服务器启动 
-* uenvcmd=tftpboot 0x2000000 uImage;tftpboot 0x1f00000 zynq-zc702.dtb;bootm 0x2000000 - 0x1f00000 rw * rootwait uio_pdrv_genirq.of_id=generic-uio
+* uenvcmd=tftpboot 0x2000000 uImage;tftpboot 0x1f00000 zynq-zc702.dtb;bootm 0x2000000 - 0x1f00000 
 
 ### FIT格式镜像启动
 * FIT格式镜像直接放到TFTP目录或者SD卡即可启动，制作方式参考[FIT文件制作](https://123456.com) <br>
