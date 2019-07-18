@@ -164,6 +164,7 @@
 #ifndef CONFIG_EXTRA_ENV_SETTINGS
 #define CONFIG_EXTRA_ENV_SETTINGS	\
 	"fit_image=fit.itb\0"		\
+	"serverip=192.168.15.10\0"  \
 	"load_addr=0x2000000\0"		\
 	"fit_size=0x800000\0"		\
 	"flash_off=0x100000\0"		\
