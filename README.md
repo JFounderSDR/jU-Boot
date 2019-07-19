@@ -29,7 +29,7 @@
 * uenvcmd=tftpboot 0x2000000 uImage;tftpboot 0x1f00000 zynq-zc702.dtb;bootm 0x2000000 - 0x1f00000 <br>
 
 ### FIT格式镜像启动
-* FIT格式镜像直接放到TFTP目录或者SD卡即可启动，制作方式参考[FIT文件制作](https://123456.com) <br>
+* FIT格式镜像直接放到TFTP目录或者SD卡即可启动，制作方式参考[FIT文件制作](https://blog.csdn.net/qq_32938605/article/details/96479459) <br>
 
 ## 运行环境
 jLab实验平台 1.0<br>
