@@ -7,7 +7,7 @@
    交叉编译器版本：6.5.0 (Linaro GCC 6.5-2018.12) ；<br>
 
 ## 编译步骤
-1export PATH="/home/armtool/gcc-linaro-6.5.0-2018.12-i686_arm-linux-gnueabihf/bin:$PATH"  #注意修改成当前系统编译器所在路径 <br>
+1. export PATH="/home/armtool/gcc-linaro-6.5.0-2018.12-i686_arm-linux-gnueabihf/bin:$PATH"  #注意修改成当前系统编译器所在路径 <br>
 2. export ARCH=arm<br>
 3. export CROSS_COMPILE=arm-linux-gnueabihf-<br>
 4. make   zynq_jLab_defconfig<br>
@@ -35,3 +35,5 @@
 jLab实验平台 1.0<br>
 ![load picture failed](https://github.com/JFounderSDR/openSCA/blob/master/jLab%E5%AE%9E%E9%AA%8C%E5%B9%B3%E5%8F%B0.png)<br>
 
+
+如对上述项目有疑问，可发邮件至yhl@onetek.net进行咨询。
